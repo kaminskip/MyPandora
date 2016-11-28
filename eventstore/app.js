@@ -1,13 +1,18 @@
-var mqtt = require('mqtt')
-var mapEvent = require('./mapEvent.js')
-var client = mqtt.connect('mqtt://192.168.1.202')
+var mqtt = require('mqtt');
+var config = require('./config.json');
+var mapEvent = require('./mapEvent.js');
+
+console.log("Connecting to MQTT server " + config.mqtt_url);
+var client = mqtt.connect(config.mqtt_url);
 
 client.on('connect', function () {
-    client.subscribe('dom/salon/temp')
-})
+    console.log("Subscribe on " + config.topic.salonTemp);
+    client.subscribe(config.topic.salonTemp);
+    console.log("Waiting for events ...");
+});
 
 client.on('message', function (topic, message) {
-    var msg = mapEvent.tempMsg(topic, message)
-    console.log(msg)
-    client.end()
-})
+    var msg = mapEvent.tempMsg(topic, message);
+    console.log(msg);
+    client.end();
+});
