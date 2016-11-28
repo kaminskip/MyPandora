@@ -14,5 +14,4 @@ client.on('connect', function () {
 client.on('message', function (topic, message) {
     var msg = mapEvent.tempMsg(topic, message);
     console.log(msg);
-    client.end();
 });
