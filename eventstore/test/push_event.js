@@ -6,9 +6,10 @@ console.log("Connect to " + config.mqtt_url);
 var client = mqtt.connect(config.mqtt_url);
 
 client.on('connect', function () {
-    client.publish(config.topic.salonTemp, JSON.stringify(testData));
+    var data = JSON.stringify(testData);
+    client.publish(config.topic.salonTemp, data);
     console.log("Event:");
-    console.log(JSON.stringify(testData));
+    console.log(data);
     console.log("published on topic: " + config.topic.salonTemp);
     client.end();
     console.log("Client disconnected.");

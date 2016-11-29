@@ -10,10 +10,11 @@ client.on('connect', function () {
     console.log("Subscribe on " + config.topic.salonTemp);
     client.subscribe(config.topic.salonTemp);
     console.log("Waiting for events ...");
+});
 
-    client.on('message', function (topic, message) {
-        var msg = mapEvent.tempMsg(topic, message);
-        console.log(msg)
-    });
-
+client.on('message', function (topic, message) {
+    switch (topic) {
+        case config.topic.salonTemp:
+            console.log(mapEvent.tempMsg(topic, JSON.parse(message.toString())));
+    }
 });

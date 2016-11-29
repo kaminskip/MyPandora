@@ -1,12 +1,12 @@
 var MapEvent = function () {};
 
-MapEvent.prototype.tempMsg = function (topic, data) {
+MapEvent.prototype.tempMsg = function (topic, jsonData) {
     var out = {};
-    var ed = new Date(Date.parse(data.data));
+    var ed = new Date(Date.parse(jsonData.data));
     out.device = topic;
     out.event_type = 'get';
     out.device_type = 'temp_sensor';
-    out.value = parseFloat(data.temp) / 1000;
+    out.value = parseFloat(jsonData.temp) / 1000;
     out.unit = 'C';
     out.date = {};
     out.date.year = ed.getFullYear();
