@@ -9,14 +9,7 @@ describe('Event store', function() {
             result.event_type = "get";
             result.device_type = "temp_sensor";
             result.value = 25.937;
-            result.unit = "C";
-            result.date = {};
-            result.date.year = 2016;
-            result.date.month = 11;
-            result.date.day = 27;
-            result.date.hour = 21;
-            result.date.min = 29;
-            result.date.sec = 1;
+            result.date = "2016-11-27T20:29:01.000Z";
             var returned = mapEvent.tempMsg("dom/salon/temp", eventData);
             var stringResult = JSON.stringify(result);
             assert.deepEqual(stringResult, returned);

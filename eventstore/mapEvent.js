@@ -7,14 +7,7 @@ MapEvent.prototype.tempMsg = function (topic, jsonData) {
     out.event_type = 'get';
     out.device_type = 'temp_sensor';
     out.value = parseFloat(jsonData.temp) / 1000;
-    out.unit = 'C';
-    out.date = {};
-    out.date.year = ed.getFullYear();
-    out.date.month = ed.getMonth() + 1;
-    out.date.day = ed.getDate();
-    out.date.hour = ed.getHours();
-    out.date.min = ed.getMinutes();
-    out.date.sec = ed.getSeconds();
+    out.date = ed.toISOString();
     return JSON.stringify(out);
 };
 

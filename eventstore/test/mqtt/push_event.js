@@ -1,6 +1,6 @@
 var mqtt = require('mqtt');
-var config = require('./config.json');
-var testData = require('./eventData.json');
+var config = require('./../config.json');
+var testData = require('./../eventData.json');
 
 console.log("Connect to " + config.mqtt_url);
 var client = mqtt.connect(config.mqtt_url);
