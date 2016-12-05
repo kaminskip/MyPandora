@@ -3,7 +3,7 @@
     "devicePath" : "dom/salon/temp",
     "eventType" : "state",
     "deviceType" : "tempSensor",
-    "day" : "2014-08-16",
+    "day" : new Date("2014-08-16"),
     "data" : [
         {new Date("2016-11-27T20:29:01.000Z") : 25937},
         {new Date("2016-11-27T20:29:04.000Z") : 25937},
