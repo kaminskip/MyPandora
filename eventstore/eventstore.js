@@ -15,7 +15,7 @@ module.exports = function (config) {
     };
 
     module.getEventDay = function (db, eventPath, eventDay, callback) {
-        db.collection(config.mongo_events).findOne({"devicePath": eventPath, "eventDay": eventDay}, {_id : 1}, function(err, id) {
+        db.collection(config.mongo_events).findOne({"devicePath": eventPath}, {_id : 1}, function(err, id) {
             if (err != null) {
                 console.log("Can not get doc: " + eventPath + ", " + eventDay);
                 console.log(err);
@@ -35,6 +35,18 @@ module.exports = function (config) {
         }, function(err) {
             if (err != null) {
                 console.log("Can not add doc: " + json);
+                console.log(err);
+                return null;
+            }
+            callback(db);
+        });
+    };
+
+    module.addEvent = function (db, id, json, callback) {
+        console.log("Add: " + id);
+        db.collection(config.mongo_events).update({_id: id}, {$push:{"data" : {"d":new Date(json.time), "v": json.value}}}, function (err) {
+            if (err != null) {
+                console.log("Can not add event: " + json);
                 console.log(err);
                 return null;
             }
