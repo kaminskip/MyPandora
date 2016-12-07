@@ -1,6 +1,6 @@
 var mqtt = require('mqtt');
 var config = require('./config.json');
-var mapEvent = require('./mapEvent.js');
+var mapEvent = require('./eventmapper.js');
 
 console.log("Connecting to MQTT server " + config.mqtt_url + " ...");
 var client = mqtt.connect(config.mqtt_url);

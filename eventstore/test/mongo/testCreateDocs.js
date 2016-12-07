@@ -1,4 +1,4 @@
-var config = require("./config.json");
+var config = require("./../config.json");
 var assert = require('assert');
 var MongoClient = require('mongodb').MongoClient;
 var MongoDB = null;
