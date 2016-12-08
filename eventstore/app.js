@@ -1,20 +1,23 @@
 var mqtt = require('mqtt');
 var config = require('./config.json');
-var mapEvent = require('./eventmapper.js');
+var eventStore = require("./eventstore")(config);
+var eventMapper = require("./eventmapper")(config);
 
 console.log("Connecting to MQTT server " + config.mqtt_url + " ...");
 var client = mqtt.connect(config.mqtt_url);
 
 client.on('connect', function () {
     console.log("Connected!");
-    console.log("Subscribe on " + config.topic.salonTemp);
-    client.subscribe(config.topic.salonTemp);
-    console.log("Waiting for events ...");
+    console.log("Subscribe to all topics");
+    client.subscribe("#");
+    console.log("Storing events");
 });
 
 client.on('message', function (topic, message) {
-    switch (topic) {
-        case config.topic.salonTemp:
-            console.log(mapEvent.tempMsg(topic, JSON.parse(message.toString())));
+    var event = eventMapper.getEvent(topic, message);
+    if (event != null) {
+        eventStore.storeEvent(event, function () {
+            process.stdout.write(".");
+        });
     }
 });

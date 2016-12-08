@@ -1,6 +1,0 @@
-{
-  "mqtt_url" : "mqtt://test.mosquitto.org",
-  "topic" : {
-    "salonTemp" : "dom/salon/temp"
-  }
-}

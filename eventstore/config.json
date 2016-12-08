@@ -1,7 +1,7 @@
 {
-  "mongo_url" : "mongodb://localhost:27017/test",
+  "mongo_url" : "mongodb://localhost:27017/mypandora",
   "mongo_events": "events",
-  "mqtt_url" : "mqtt://test.mosquitto.org",
+  "mqtt_url" : "mqtt://192.168.1.202",
 
   "topic" : {
     "salonTemp" : "dom/salon/temp"
