@@ -2,6 +2,7 @@ var mqtt = require('mqtt');
 var config = require('./config.json');
 var eventStore = require("./eventstore")(config);
 var eventMapper = require("./eventmapper")(config);
+var thingspeak = require("./thingspeak")(config);
 
 console.log("Connecting to MQTT server " + config.mqtt_url + " ...");
 var client = mqtt.connect(config.mqtt_url);
@@ -19,5 +20,8 @@ client.on('message', function (topic, message) {
         eventStore.storeEvent(event, function () {
             process.stdout.write(".");
         });
+        thingspeak.storeEvent(event, function () {
+            process.stdout.write(":");
+        })
     }
 });
