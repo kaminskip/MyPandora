@@ -1,5 +1,7 @@
-
 .idea/
 MyPandora.iml
 eventstore/config.json
 eventstore/node_modules/
+gate/node_modules/
+eventstore/npm-debug.log
+gate/node_modules
