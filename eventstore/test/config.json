@@ -1,9 +1,13 @@
 {
-  "mongo_url" : "mongodb://localhost:27017/test",
+  "mongo_url": "mongodb://localhost:27017/test",
   "mongo_events": "events",
-  "mqtt_url" : "mqtt://test.mosquitto.org",
+  "mqtt_url": "mqtt://test.mosquitto.org",
 
-  "topic" : {
-    "salonTemp" : "dom/salon/temp"
+  "topic": {
+    "salonTemp" : {
+      "id": "dom/salon/temp",
+      "ts_channel_id": 0,
+      "ts_write_key": "writeKey"
+    }
   }
 }

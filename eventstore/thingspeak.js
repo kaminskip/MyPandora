@@ -1,16 +1,26 @@
 module.exports = function (config) {
 
-    var Client = require('node-rest-client').Client;
-    var client = new Client();
+    var ThingSpeakClient = require('thingspeakclient');
+    var client = new ThingSpeakClient();
+
+    for (var topic in config.topic) {
+        client.attachChannel(config.topic[topic].ts_channel_id, {writeKey : config.topic[topic].ts_write_key}, function (data) {
+            console.log("ThingSpeak channel attached: " + topic + " (" + config.topic[topic].ts_channel_id + ")");
+        });
+    }
 
     module.storeEvent = function (event, callback) {
-        var json = JSON.parse(event);
-        var args = {
-            data: { key: json.ts_key, field1: json.value },
-            headers: { "Content-Type": "application/json" }
-        };
-        client.post(config.ts_url, args, function () {
-            callback("AddedEvent");
+        client.updateChannel(event.ts.channel_id, event.ts.data, function(err, resp) {
+            if (err){
+                process.stderr.write(err);
+                callback(err);
+                return;
+            }
+            if (resp <= 0){
+                process.stderr.write("Not updated response: " + resp);
+
+            }
+            callback(resp);
         });
     };
 
