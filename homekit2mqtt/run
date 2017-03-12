@@ -1,2 +1,2 @@
 #! /bin/sh
-homekit2mqtt --mapfile config.json --url mqtt://127.0.0.1 --storagedir persist --pincode 239-05-734 --username CC:22:3D:E3:CE:F6 --bridgename "Pandora" --port 51826
+homekit2mqtt --mapfile /home/pi/iot/MyPandora/homekit2mqtt/config.json --url mqtt://127.0.0.1 --storagedir persist --pincode 239-05-734 --username CC:22:3D:E3:CE:F6 --bridgename "Pandora" --port 51826
