@@ -1,0 +1,168 @@
+{
+  "Thermostat1": {
+    "service": "Thermostat",
+    "name": "Thermostat1",
+    "topic": {
+      "setTargetTemperature": "Thermostat1/set/TargetTemperature",
+      "statusTargetTemperature": "Thermostat1/status/TargetTemperature",
+      "statusCurrentTemperature": "Thermostat1/status/CurrentTemperature",
+      "statusCurrentRelativeHumidity": "Thermostat1/status/CurrentHumidity"
+    },
+    "payload": {
+
+    },
+    "config": {
+      "TemperatureDisplayUnits": 0
+    },
+    "manufacturer": "Generic",
+    "model": "Thermostat"
+  },
+  "WindowCovering1": {
+    "service":  "WindowCovering",
+    "name": "Blind",
+    "topic": {
+      "setTargetPosition":  "WindowCovering1/set/TargetPosition",
+      "statusTargetPosition":  "WindowCovering1/status/TargetPosition",
+      "statusCurrentPosition":  "WindowCovering1/status/CurrentPosition",
+      "statusPositionStatus":  "WindowCovering1/status/PositionStatus"
+    },
+    "payload": {
+      "targetPositionFactor": 0.01,
+      "currentPositionFactor": 0.01,
+      "positionStatusIncreasing": 1,
+      "positionStatusDecreasing": 2
+    },
+    "manufacturer": "Generic",
+    "model": "WindowCovering"
+  },
+  "Lightbulb1": {
+    "service":  "Lightbulb",
+    "name":     "Licht Garten",
+    "topic": {
+      "setOn":          "Lightbulb1/set",
+      "statusOn":       "Lightbulb1/status"
+    },
+    "payload": {
+      "onTrue": 1,
+      "onFalse": 0
+    },
+    "manufacturer": "Generic",
+    "model": "Lightbulb"
+  },
+  "Lightbulb2": {
+    "service":  "Lightbulb",
+    "name":     "Lightbulb2",
+    "topic": {
+      "setOn":            "Lightbulb2/set",
+      "setBrightness":    "Lightbulb2/set/Brightness",
+      "statusOn":         "Lightbulb2/status",
+      "statusBrightness": "Lightbulb2/status/Brightness",
+      "identify":         "Lightbulb2/set/identify"
+    },
+    "payload": {
+      "onTrue": 254,
+      "onFalse": 0,
+      "brightnessFactor": 2.54,
+      "identify": "select"
+    },
+    "manufacturer": "Generic",
+    "model": "Lightbulb Dimmable"
+  },
+  "Lightbulb3": {
+    "service":  "Lightbulb",
+    "name":     "Lightbulb3",
+    "topic": {
+      "setOn":            "Lightbulb3/set",
+      "setBrightness":    "Lightbulb3/set/Brightness",
+      "setHue":           "Lightbulb3/set/Hue",
+      "setSaturation":    "Lightbulb3/set/Saturation",
+      "statusOn":         "Lightbulb3/status",
+      "statusBrightness": "Lightbulb3/status/Brightness",
+      "statusHue":        "Lightbulb3/status/Hue",
+      "statusSaturation": "Lightbulb3/status/Saturation",
+      "identify":         "Lightbulb3/set/identify"
+    },
+    "payload": {
+      "onTrue": 254,
+      "onFalse": 0,
+      "brightnessFactor": 2.54,
+      "hueFactor": 182.042,
+      "saturationFactor": 2.54,
+      "identify": "select"
+    },
+    "manufacturer": "Generic",
+    "model": "Lightbulb Color"
+  },
+  "Switch": {
+    "service": "Switch",
+    "name": "Steckdose Fernseher",
+    "topic": {
+      "statusOn": "Switch/status",
+      "setOn": "Switch/set"
+    },
+    "payload": {
+      "onTrue": 1,
+      "onFalse": 0
+    },
+    "manufacturer": "Generic",
+    "model": "Switch"
+  },
+  "MotionSensor": {
+    "service": "MotionSensor",
+    "name": "MotionSensor",
+    "topic": {
+      "statusMotionDetected": "MotionSensor/status"
+    },
+    "payload": {
+      "onMotionDetected": true
+    },
+    "manufacturer": "Generic",
+    "model": "MotionSensor"
+  },
+  "ContactSensor": {
+    "service": "ContactSensor",
+    "name": "ContactSensor",
+    "topic": {
+      "statusContactSensorState": "ContactSensor/status",
+      "statusLowBattery": "ContactSensor/status/LowBattery"
+    },
+    "payload": {
+      "onContactDetected": 0,
+      "onBatteryLow": 1
+    },
+    "manufacturer": "Generic",
+    "model": "ContactSensor"
+  },
+  "LockMechanism": {
+    "service": "LockMechanism",
+    "name": "LockMechanism",
+    "topic": {
+      "setLock": "LockMechanism/set",
+      "statusLock": "LockMechanism/status"
+    },
+    "payload": {
+      "lockUnsecured": 1,
+      "lockSecured": 0
+    },
+    "manufacturer": "Generic",
+    "model": "LockMechanism"
+  },
+  "TemperatureSensor": {
+    "service": "TemperatureSensor",
+    "name": "TemperatureSensor",
+    "topic": {
+      "statusTemperature": "TemperatureSensor/Temperature"
+    },
+    "manufacturer": "Generic",
+    "model": "TemperatureSensor"
+  },
+  "LightSensor": {
+    "service": "LightSensor",
+    "name": "LightSensor",
+    "topic": {
+      "statusAmbientLightLevel": "LightSensor/Brightness"
+    },
+    "manufacturer": "Generic",
+    "model": "LightSensor"
+  }
+}

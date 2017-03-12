@@ -1,0 +1,11 @@
+{
+  "TemperatureSensorLoft": {
+    "service": "TemperatureSensor",
+    "name": "Loft",
+    "topic": {
+      "statusTemperature": "homekit/TemperatureSensorLoft/temp"
+    },
+    "manufacturer": "Pandora",
+    "model": "0.1"
+  }
+}
