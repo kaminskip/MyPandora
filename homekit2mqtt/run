@@ -6,4 +6,5 @@ homekit2mqtt \
     --pincode 239-05-734 \
     --username CC:22:3D:E3:CE:F6 \
     --bridgename "Pandora" \
-    --port 51827
+    --port 51827 \
+    --verbosity debug
