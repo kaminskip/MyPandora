@@ -2,9 +2,9 @@
 homekit2mqtt \
     --mapfile /home/pi/iot/MyPandora/homekit2mqtt/config.json \
     --url mqtt://127.0.0.1 \
-    --storagedir persist \
+    --storagedir /home/pi/iot/MyPandora/homekit2mqtt/data \
     --pincode 239-05-734 \
-    --username CC:22:3D:E3:CE:F6 \
+    --username C2:21:33:E3:C1:F0 \
     --bridgename "Pandora" \
-    --port 51827 \
+    --port 51826 \
     --verbosity debug
