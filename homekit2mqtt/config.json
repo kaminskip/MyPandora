@@ -1,7 +1,7 @@
 {
   "TemperatureSensorLoft": {
     "service": "TemperatureSensor",
-    "name": "Temperature",
+    "name": "Temperature Loft",
     "topic": {
       "statusTemperature": "homekit/TemperatureSensorLoft/temp"
     },
@@ -11,7 +11,7 @@
 
   "TemperatureSensorBedroom": {
     "service": "TemperatureSensor",
-    "name": "Temperature",
+    "name": "Temperature Bedroom",
     "topic": {
       "statusTemperature": "homekit/TemperatureSensorBedroom/temp"
     },
@@ -21,7 +21,7 @@
 
   "TemperatureSensorSalon": {
     "service": "TemperatureSensor",
-    "name": "Temperature",
+    "name": "Temperature Salon",
     "topic": {
       "statusTemperature": "homekit/TemperatureSensorSalon/temp"
     },
@@ -31,7 +31,7 @@
 
   "LampBedroom": {
     "service":  "Lightbulb",
-    "name":     "Lamp",
+    "name":     "Lamp Bedroom",
     "topic": {
       "setOn":          "homekit/LampBedroom/set",
       "statusOn":       "homekit/LampBedroom/status"
@@ -46,7 +46,7 @@
 
   "LampSalon": {
     "service":  "Lightbulb",
-    "name":     "Lamp",
+    "name":     "Lamp Salon",
     "topic": {
       "setOn":          "homekit/LampSalon/set",
       "statusOn":       "homekit/LampSalon/status"
