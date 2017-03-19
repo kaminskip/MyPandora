@@ -6,3 +6,5 @@ gate/node_modules/
 eventstore/npm-debug.log
 gate/node_modules
 homekit2mqtt/persist/
+homekit2mqtt/data/
+homekit2mqtt/server.log
