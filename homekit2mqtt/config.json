@@ -29,6 +29,16 @@
     "model": "0.1"
   },
 
+  "TemperatureSensorGarage": {
+    "service": "TemperatureSensor",
+    "name": "Temperature Garage",
+    "topic": {
+      "statusTemperature": "homekit/TemperatureSensorGarage/temp"
+    },
+    "manufacturer": "Pandora",
+    "model": "0.1"
+  },
+
   "LampBedroom": {
     "service":  "Lightbulb",
     "name":     "Lamp Bedroom",
@@ -54,6 +64,21 @@
     "payload": {
       "onTrue": 1,
       "onFalse": 0
+    },
+    "manufacturer": "Pandora",
+    "model": "0.1"
+  },
+
+  "LockGarage": {
+    "service": "GarageDoorOpener",
+    "name": "Garage",
+    "topic": {
+      "setDoor": "homekit/Garage/setDoor",
+      "statusDoor": "homekit/Garage/statusDoor"
+    },
+    "payload": {
+      "doorOpen": "openGarage",
+      "doorClosed": "closeGarage"
     },
     "manufacturer": "Pandora",
     "model": "0.1"
