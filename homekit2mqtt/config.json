@@ -77,8 +77,8 @@
       "statusDoor": "homekit/Garage/statusDoor"
     },
     "payload": {
-      "doorOpen": "openGarage",
-      "doorClosed": "closeGarage"
+      "doorOpen": 0,
+      "doorClosed": 1
     },
     "manufacturer": "Pandora",
     "model": "0.1"
