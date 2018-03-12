@@ -11,32 +11,10 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8888;        // set our port
-
-// ROUTES FOR OUR API
-// =============================================================================
-var router = express.Router();              // get an instance of the express Router
-
-// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-router.get('/', function(req, res) {
-    res.json({ message: 'Pandora gateway api' });
-});
-
-router.get('/home/salon/temp', function(req, res) {
-    res.json({ value: '23' });
-});
-
-router.get('/home/bedroom/temp', function(req, res) {
-    res.json({ value: '25.5' });
-});
-
-// more routes for our API will happen here
-
-// REGISTER OUR ROUTES -------------------------------
-// all of our routes will be prefixed with /api
-app.use('/api', router);
+app.use(require('./routes'));
 
 // START THE SERVER
 // =============================================================================
-app.listen(port);
-console.log('Pandora API gateway started on ' + port);
+var server = app.listen( process.env.PORT || 8888, function(){
+    console.log('Pandora API gateway started on ' + server.address().port);
+});
