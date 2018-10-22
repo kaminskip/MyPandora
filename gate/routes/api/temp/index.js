@@ -11,6 +11,7 @@ router.get('/home/:room/temp', function (req, res) {
             var duration = eventMoment.fromNow();
             console.log("Get temperature for " + req.path + " form " + eventDate + " value " + response.field1 + " C");
             res.send({
+		path: req.path,
                 value: response.field1,
                 isoDate: response.created_at,
                 date: eventDate,
